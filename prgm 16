@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX 100
+
+struct Task {
+    char description[100];
+};
+
+int main() {
+    struct Task tasks[MAX];
+    int count = 0;
+    int choice;
+
+    while (1) {
+        printf("\n1. Add Task\n2. View Tasks\n3. Exit\nEnter choice: ");
+        scanf("%d", &choice);
+        getchar();
+
+        switch (choice) {
+            case 1:
+                if (count < MAX) {
+                    printf("Enter task: ");
+                    fgets(tasks[count].description, 100, stdin);
+                    count++;
+                } else {
+                    printf("Task list full!\n");
+                }
+                break;
+
+            case 2:
+                printf("\nYour Tasks:\n");
+                for (int i = 0; i < count; i++) {
+                    printf("%d. %s", i + 1, tasks[i].description);
+                }
+                break;
+
+            case 3:
+                exit(0);
+
+            default:
+                printf("Invalid choice!\n");
+        }
+    }
+
+    return 0;
+}
