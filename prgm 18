@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int a;      // first variable
+    int b;      // second variable
+    int sum;    // variable to store sum
+
+    // Assigning values to variables
+    a = 10;
+    b = 20;
+
+    // Calculating sum
+    sum = a + b;
+
+    // Displaying output
+    printf("Value of a = %d\n", a);
+    printf("Value of b = %d\n", b);
+    printf("Sum = %d\n", sum);
+
+    return 0;
+}
